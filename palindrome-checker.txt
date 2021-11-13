@@ -1,0 +1,15 @@
+function palindrome(str) {
+  let result = true;
+  let newStr = str.toLowerCase();
+  let k = 1;
+  newStr = newStr.replaceAll(/\s|[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '');
+
+  for (let i = 0; i < newStr.length; i++) {
+    console.log(newStr[i], "  ===  ", newStr[newStr.length-i - 1]);
+    if (!(newStr[i] === newStr[newStr.length-i - 1])) { return false;}
+  }
+
+  return result;
+}
+
+console.log(palindrome("not a palindrome"));
